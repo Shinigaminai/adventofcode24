@@ -20,3 +20,14 @@ sort2 = np.sort(np.array(list2))
 distances = np.absolute(np.subtract(sort1, sort2))
 total_distance = np.sum(distances)
 print(total_distance)
+
+# calculate similarity score
+list2_counted = {}
+for i in list2:
+	if nr := list2_counted.get(i):
+		list2_counted[i] = nr + 1
+	else:
+		list2_counted[i] = 1
+counts = [list2_counted.get(i) * i for i in list1 if list2_counted.get(i) is not None]
+similarity_score = np.nansum(counts)
+print(similarity_score)
