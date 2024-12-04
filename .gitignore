@@ -396,3 +396,9 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# adventofcode input file
+*.input*
+
+# dolphin
+.directory
