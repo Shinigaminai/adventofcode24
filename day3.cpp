@@ -26,14 +26,37 @@ int findmul(string s) {
   return result;
 }
 
+enum State { ACTIVE, INACTIVE };
+
 int main() {
   ifstream file;
   file.open("day3.input.txt");
   int result = 0;
+  State state = ACTIVE;
   string input_string;
   if (file.is_open()) {
     while (getline(file, input_string)) {
-      result += findmul(input_string);
+      // part 1
+      // result += findmul(input_string);
+      // part 2
+      cout << "read new line" << endl;
+      while (!input_string.empty()) {
+        if (state == ACTIVE) {
+          auto dont_pos = input_string.find("don't()");
+          result += findmul(input_string.substr(0, dont_pos));
+          cout << "Found don't() at pos " << dont_pos << endl;
+          if (dont_pos == string::npos)
+            break;
+          input_string = input_string.substr(dont_pos + 7);
+          state = INACTIVE;
+        }
+        auto do_pos = input_string.find("do()");
+        cout << "Found do() at pos " << do_pos << endl;
+        if (do_pos == string::npos)
+          break;
+        input_string = input_string.substr(do_pos + 4);
+        state = ACTIVE;
+      }
     }
     file.close();
   } else {
