@@ -28,10 +28,33 @@ def check_update_correct(update: list) -> bool:
     return True
 
 
-val = 0
+def fix_update(update: list) -> list:
+    # print(f"fixing update {update}")
+    i = 0
+    while i < len(update):
+        page = update[i]
+        pages_after = update[i + 1 :]
+        for page_after in pages_after:
+            if page_after in (page_before.get(page) or []):
+                update.pop(i)
+                update.append(page)
+                break
+        else:
+            i += 1
+    return update
+
+
+magic_val_correct = 0
+magic_val_incorrect = 0
 for update in updates:
     if check_update_correct(update):
         middle_index = int(len(update) / 2)
-        val += update[middle_index]
+        magic_val_correct += update[middle_index]
+    else:
+        fixed_update = fix_update(update)
+        middle_index = int(len(fixed_update) / 2)
+        magic_val_incorrect += update[middle_index]
 
-print(val)
+
+print(f"First Magic Value: {magic_val_correct}")
+print(f"Second Magic Value: {magic_val_incorrect}")
