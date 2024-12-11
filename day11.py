@@ -2,7 +2,7 @@ from tqdm import tqdm
 
 test_str = "125 17"
 input_str = "475449 2599064 213 0 2 65 5755 51149"
-stones = list(map(int, test_str.strip().split()))
+stones = list(map(int, input_str.strip().split()))
 print(f"input: {stones}")
 
 
