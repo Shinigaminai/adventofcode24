@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="/usr/bin/fpc" Date="1714586784"/>
+  <Params Value=" -MObjFPC -Scghi -Cg -O1 -gw3 -gl -l -vewnhibq &quot;-Fi/home/patrick/Dokumente/Freizeit/Programmieren/Advent of Code/adventofcode24/lib/x86_64-linux&quot; &quot;-Fu/home/patrick/Dokumente/Freizeit/Programmieren/Advent of Code/adventofcode24/&quot; &quot;-FU/home/patrick/Dokumente/Freizeit/Programmieren/Advent of Code/adventofcode24/lib/x86_64-linux/&quot; &quot;-FE/home/patrick/Dokumente/Freizeit/Programmieren/Advent of Code/adventofcode24/&quot; &quot;-o/home/patrick/Dokumente/Freizeit/Programmieren/Advent of Code/adventofcode24/day12&quot; day12.lpr"/>
+</CONFIG>

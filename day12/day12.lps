@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="day12.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <CursorPos X="27" Y="33"/>
+        <UsageCount Value="24"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/usr/lib/fpc/src/packages/fcl-base/src/streamex.pp"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="127"/>
+        <CursorPos X="16" Y="156"/>
+        <UsageCount Value="12"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/usr/lib/fpc/src/rtl/inc/objpash.inc"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="177"/>
+        <CursorPos X="23" Y="206"/>
+        <UsageCount Value="12"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/usr/lib/fpc/src/rtl/inc/systemh.inc"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="1307"/>
+        <CursorPos X="27" Y="1336"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="29">
+      <Position>
+        <Filename Value="day12.lpr"/>
+        <Caret Line="19" Column="17"/>
+      </Position>
+      <Position>
+        <Filename Value="day12.lpr"/>
+        <Caret Line="17" Column="11"/>
+      </Position>
+      <Position>
+        <Filename Value="day12.lpr"/>
+        <Caret Line="8" Column="40"/>
+      </Position>
+      <Position>
+        <Filename Value="day12.lpr"/>
+        <Caret Line="21" Column="24"/>
+      </Position>
+      <Position>
+        <Filename Value="day12.lpr"/>
+        <Caret Line="8" Column="42"/>
+      </Position>
+      <Position>
+        <Filename Value="day12.lpr"/>
+        <Caret Line="14" Column="48"/>
+      </Position>
+      <Position>
+        <Filename Value="day12.lpr"/>
+        <Caret Line="9" Column="5"/>
+      </Position>
+      <Position>
+        <Filename Value="day12.lpr"/>
+        <Caret Line="14" Column="48"/>
+      </Position>
+      <Position>
+        <Filename Value="day12.lpr"/>
+        <Caret Line="19" Column="4"/>
+      </Position>
+      <Position>
+        <Filename Value="day12.lpr"/>
+        <Caret Line="23" Column="18"/>
+      </Position>
+      <Position>
+        <Filename Value="day12.lpr"/>
+        <Caret Line="26" Column="19"/>
+      </Position>
+      <Position>
+        <Filename Value="day12.lpr"/>
+        <Caret Line="18" Column="16"/>
+      </Position>
+      <Position>
+        <Filename Value="day12.lpr"/>
+        <Caret Line="21" Column="36"/>
+      </Position>
+      <Position>
+        <Filename Value="day12.lpr"/>
+        <Caret Line="22" Column="3"/>
+      </Position>
+      <Position>
+        <Filename Value="day12.lpr"/>
+        <Caret Line="6" Column="10"/>
+      </Position>
+      <Position>
+        <Filename Value="day12.lpr"/>
+        <Caret Line="5" Column="11"/>
+      </Position>
+      <Position>
+        <Filename Value="day12.lpr"/>
+        <Caret Line="29" Column="5"/>
+      </Position>
+      <Position>
+        <Filename Value="day12.lpr"/>
+        <Caret Line="28" Column="17"/>
+      </Position>
+      <Position>
+        <Filename Value="day12.lpr"/>
+        <Caret Line="40" Column="37"/>
+      </Position>
+      <Position>
+        <Filename Value="day12.lpr"/>
+        <Caret Line="30"/>
+      </Position>
+      <Position>
+        <Filename Value="day12.lpr"/>
+        <Caret Line="41" Column="42"/>
+      </Position>
+      <Position>
+        <Filename Value="day12.lpr"/>
+        <Caret Line="28"/>
+      </Position>
+      <Position>
+        <Filename Value="day12.lpr"/>
+        <Caret Line="37" Column="22"/>
+      </Position>
+      <Position>
+        <Filename Value="day12.lpr"/>
+        <Caret Line="29" Column="38"/>
+      </Position>
+      <Position>
+        <Filename Value="day12.lpr"/>
+        <Caret Line="27" Column="17"/>
+      </Position>
+      <Position>
+        <Filename Value="day12.lpr"/>
+        <Caret Line="28" Column="9"/>
+      </Position>
+      <Position>
+        <Filename Value="day12.lpr"/>
+        <Caret Line="17" Column="7"/>
+      </Position>
+      <Position>
+        <Filename Value="day12.lpr"/>
+        <Caret Line="32" Column="26"/>
+      </Position>
+      <Position>
+        <Filename Value="day12.lpr"/>
+        <Caret Line="38" Column="11"/>
+      </Position>
+      <Position>
+        <Filename Value="day12.lpr"/>
+        <Caret Line="33" Column="24"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+  <Debugging>
+    <BreakPoints>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="day12.lpr"/>
+        <Line Value="19"/>
+      </Item>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="day12.lpr"/>
+        <Line Value="15"/>
+      </Item>
+    </BreakPoints>
+  </Debugging>
+</CONFIG>
