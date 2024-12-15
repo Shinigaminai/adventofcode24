@@ -6,7 +6,7 @@ uses
   Classes,SysUtils,Position;
 
 const
-  C_FNAME = 'day12.test.txt';
+  C_FNAME = 'day12.input.txt';
 
 type
   StrLptr = ^TStringList;
@@ -15,18 +15,11 @@ type
   end;
     
 
-function isEqualNeighbor(pos: TPosition; dir: TPosition; map: TStringList): Integer;
-var
-  maxPosition: TPosition;
-  nextPosition: TPosition;
+function isValidIndex(pos: TPosition; maxPosition: TPosition): Boolean;
 begin
-  maxPosition := TPosition.Create((Length(map[0]) - 1), map.Count - 1);
-  nextPosition := TPosition.Create(pos.x + dir.x, pos.y + dir.y);
-  if (nextPosition.y < 0) or (nextPosition.y > maxPosition.y) or (nextPosition.x < 0) or (nextPosition.x > maxPosition.x) then
-    Exit(0);
-  if map[nextPosition.y][nextPosition.x] = map[pos.y][pos.x] then
-    Exit(1);
-  Result := 0;
+  if (pos.y < 0) or (pos.y > maxPosition.y) or (pos.x < 1) or (pos.x > maxPosition.x) then
+    Exit(False);
+  Result := True;
 end;
 
 function calculateRegion(pos: TPosition; map: StrLptr): TRegion;
@@ -36,28 +29,36 @@ var
   nextPosition: TPosition;
   plot, plotVisited: Char;
   dir: TPosition;
+  nextPlot: Char;
+  plotptr: ^Char;
 begin
   Result.area := 1;
   Result.circ := 0;
   plot := map^[pos.y][pos.x];
-  plotVisited := Chr(Ord(plot) + 20);
-  map^[pos.y][pos.x] := plotVisited;
+  plotVisited := Chr(Ord(plot) + 32);
+  plotptr := @map^[pos.y][pos.x];
+  plotptr^ := plotVisited;
   directions := [TPosition.Create(0,1), TPosition.Create(0, -1), TPosition.Create(-1, 0), TPosition.Create(1, 0)];
   for dir in directions do
   begin
     nextPosition := TPosition.Create(pos.x + dir.x, pos.y + dir.y);
-    case map^[nextPosition.y][nextPosition.x] of
-      plot:
-        begin
-          recRegion := calculateRegion(nextPosition, map);
-          Result.area += recRegion.area;
-          Result.circ += recRegion.circ;
-        end;
-      plotVisited:
-        Continue
-    else
-      Result.circ += 1;
+    // writeln('nextpos ', nextPosition.y, ',', nextPosition.x);
+    if not isValidIndex(nextPosition, TPosition.Create(Length(map^[0]), map^.Count - 1)) then
+    begin
+      inc(Result.circ);
+      Continue;
     end;
+    nextPlot := map^[nextPosition.y][nextPosition.x];
+    if nextPlot = plot then
+    begin
+      recRegion := calculateRegion(nextPosition, map);
+      Result.area += recRegion.area;
+      Result.circ += recRegion.circ;
+      Continue;
+    end;
+    if nextPlot = plotVisited then
+      Continue;
+    inc(Result.circ);
   end;
 end;
 
@@ -65,30 +66,32 @@ function calcFencing(map: StrLptr): Integer;
 var
   i, j: Integer;
   line: String;
-  directions: array of TPosition;
-  dir: TPosition;
   recRegion: TRegion;
   plot: char;
+  plotptr: string;
+  mapVal: TStringList;
 begin
   Result := 0;
   i := 0;
-  directions := [TPosition.Create(0,1), TPosition.Create(0, -1), TPosition.Create(-1, 0), TPosition.Create(1, 0)];
+  writeln('iterate ', map^.Count, ' lines');
   while i < map^.Count do
   begin
-    j := 0;
+    j := 1;
     line := map^[i];
-    while j < (Length(line) - 1) do
+    // writeln(line);
+    while j <= (Length(line)) do
     begin
-      if map^[i][j] < 'a' then
+      if (map^[i][j] <= 'Z') and (map^[i][j] >= 'A') then
       begin
         plot := map^[i][j];
+        // writeln('checking plot ', i, ',', j, ': ', plot);
         recRegion := calculateRegion(TPosition.Create(j, i), map);
         Result += recRegion.area * recRegion.circ;
         writeln('Found new Region ', plot, ' of area ', recRegion.area, ' and circ ', recRegion.circ);
       end;
-      j := j + 1;
+      inc(j);
     end;
-    i := i + 1;
+    inc(i);
   end;
 end;
 
@@ -101,6 +104,7 @@ begin
     // Open the file for reading
     slInfo.LoadFromFile(C_FNAME);
     writeln(slInfo.Count);
+    // Lines start at index 0, Columns at index 1 !! :(
     // i := 0;
     // while i < slInfo.Count do
     // begin
